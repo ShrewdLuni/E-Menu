@@ -3,41 +3,22 @@
     <div class="flex flex-row bg-gray-900 rounded-xl text-white text-left w-full px-8 py-6 gap-x-4 items-center">
       <img class="h-8 w-8" src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/x-social-media-white-square-icon.png"/>
       <div class="flex flex-col">
-        <p class="font-bold text-2xl">Name<p>
-        <p class="font-semibold text-gray-400 text-xl">Adress Street №3</p>
+        <p class="font-bold text-2xl">{{name}}<p>
+        <p class="font-semibold text-gray-400 text-xl">{{adress}}</p>
       </div>
     </div>  
     <div class="flex flex-col bg-gray-900 rounded-xl text-white text-center w-[calc(50%-12px)] p-8 mr-auto gap-4">
       <p class="text-left font-bold text-xl">Categories</p>
-      <a class="rounded-lg px-[24px] py-[10px] text-xl font-semibold border-gray-600 border-2 cursor-pointer">Test</a>
-      <a class="rounded-lg px-[24px] py-[10px] text-xl font-semibold border-gray-600 border-2 cursor-pointer">Test</a>
-      <a class="rounded-lg px-[24px] py-[10px] text-xl font-semibold border-gray-600 border-2 cursor-pointer">Test</a>
-      <a class="rounded-lg px-[24px] py-[10px] text-xl font-semibold border-gray-600 border-2 cursor-pointer">Test</a>
+      @for (item of categories; track $index) {
+        <a class="rounded-lg px-[24px] py-[12px] text-xl text-left font-semibold border-gray-600 border-2 cursor-pointer">{{item}}</a>
+      }
     </div>
-    <div class="flex flex-col bg-gray-900 rounded-xl text-white text-center w-[calc(50%-12px)] p-8 gap-4">
+    <div class="flex flex-col bg-gray-900 rounded-xl text-white text-center w-[calc(50%-12px)] min-h-0 p-8 gap-4">
       <p class="text-left text-xl font-bold">About</p>
       <div class="flex flex-col gap-y-4">
-        <div class="flex flex-row gap-x-4 border-gray-600 border-2 rounded-lg px-[24px] py-[10px]">
-          <p class="self-center">A</p>
-          <div class="flex flex-col text-left">
-            <p class="text-gray-600">Adress</p>
-            <p class="text-white font-semibold">Test Adress 123</p>
-          </div>
-        </div>
-        <div class="flex flex-row gap-x-4 border-gray-600 border-2 rounded-lg px-[24px] py-[10px]">
-          <p class="self-center">B</p>
-          <div class="flex flex-col text-left">
-            <p class="text-gray-600">Adress</p>
-            <p class="text-white font-semibold">Test Adress 321</p>
-          </div>
-        </div>
-        <div class="flex flex-row gap-x-4 border-gray-600 border-2 rounded-lg px-[24px] py-[10px]">
-          <p class="self-center">C</p>
-          <div class="flex flex-col text-left">
-            <p class="text-gray-600">Adress</p>
-            <p class="text-white font-semibold">Test Adress 456</p>
-          </div>
-        </div>
+        @for (item of aboutItems; track $index) {
+          <app-about-item [icon]=item.icon [header]=item.header [info]=item.info/>
+        }
       </div>
     </div>
   </div>
