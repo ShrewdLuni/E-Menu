@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core'
 import { CommonModule } from '@angular/common'
-import { AboutItemComponent } from "../../shared/components/about-item.component";
+import { AboutItemComponent } from "../../shared/components/about-item/about-item.component";
 
 @Component({
     selector: 'app-home',
