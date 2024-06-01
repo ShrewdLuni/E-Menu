@@ -1,0 +1,17 @@
+<div class="fixed h-screen w-[20%] justify-center bg-[#1D1D29] z-50 text-white">
+  <div class="flex justify-center mb-10 mt-10">
+    <p class="font-semibold text-[48px]">Logo</p>
+  </div>
+  <div class="flex flex-col gap-y-4 px-8">
+    @for (item of sidebarItems; track $index) {
+      <sidebar-item [label]="item.label" [href]="item.href"/>
+    }
+  </div>
+  <div class="my-10">
+    <mat-divider class="w-[100]"></mat-divider>
+  </div>
+  <div class="flex flex-col gap-y-4 px-8">
+    <sidebar-item label="Settings" href="settings"/>
+    <sidebar-item label="Sign Out" href="signout"/>
+  </div>
+</div>
